@@ -8,9 +8,14 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @State var stopwatch = 0
+    
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+            self.stopwatch += 1
+        }
+        return Text("\(stopwatch)")
     }
 }
 
